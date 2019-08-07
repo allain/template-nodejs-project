@@ -1,0 +1,39 @@
+{
+  "name": "template-nodejs-project",
+  "version": "1.0.0",
+  "description": "A template project for building node libraries with esm modules.",
+  "main": "index.js",
+  "scripts": {
+    "build": "rollup --config ./rollup.config.js",
+    "build:watch": "npm run build -- --watch",
+    "dev": "concurrently --kill-others 'npm run build:watch' 'npm run test:watch'",
+    "clean": "rimraf dist/ coverage/",
+    "test": "jest",
+    "test:watch": "npm run test -- --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allain/template-nodejs-project.git"
+  },
+  "keywords": [
+    "template",
+    "build",
+    "rollup"
+  ],
+  "author": "Allain Lalonde <allain.lalonde@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/allain/template-nodejs-project/issues"
+  },
+  "homepage": "https://github.com/allain/template-nodejs-project#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@types/jest": "^24.0.15",
+    "babel-jest": "^24.7.1",
+    "concurrently": "^4.1.1",
+    "jest": "^24.8.0",
+    "rimraf": "^2.6.3",
+    "rollup": "^1.17.0"
+  }
+}
